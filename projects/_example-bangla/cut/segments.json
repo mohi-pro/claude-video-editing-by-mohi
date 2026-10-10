@@ -1,0 +1,59 @@
+{
+  "source": "raw/01-bangla-raw.mp4",
+  "speed": 1.1,
+  "fps": 30,
+  "canvas": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "crop": {
+    "cropX": 0.5,
+    "cropY": 0.5,
+    "fit": "crop"
+  },
+  "segments": [
+    {
+      "srcStart": 0.167,
+      "srcEnd": 3.633,
+      "outStart": 0,
+      "outEnd": 3.152
+    },
+    {
+      "srcStart": 5.467,
+      "srcEnd": 6.8,
+      "outStart": 3.152,
+      "outEnd": 4.364
+    },
+    {
+      "srcStart": 10.8,
+      "srcEnd": 12.833,
+      "outStart": 4.364,
+      "outEnd": 6.212
+    },
+    {
+      "srcStart": 16.933,
+      "srcEnd": 19.433,
+      "outStart": 6.212,
+      "outEnd": 8.485
+    },
+    {
+      "srcStart": 21.167,
+      "srcEnd": 23.867,
+      "outStart": 8.485,
+      "outEnd": 10.939
+    },
+    {
+      "srcStart": 25.4,
+      "srcEnd": 28.167,
+      "outStart": 10.939,
+      "outEnd": 13.455
+    },
+    {
+      "srcStart": 29.8,
+      "srcEnd": 30.967,
+      "outStart": 13.455,
+      "outEnd": 14.515
+    }
+  ]
+}

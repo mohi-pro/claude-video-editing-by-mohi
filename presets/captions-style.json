@@ -1,0 +1,60 @@
+{
+  "_doc": "LOCKED format preset — Short: explainer (9:16). Rule-of-thirds layout: hook/titles/cards in the top band (15.6–36%), eyes on the 42% line, captions centred at 66.5%, full-screen scenes for big infographics.",
+  "name": "short-explainer",
+  "canvas": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "roughCut": {
+    "maxGap": 0.12,
+    "padIn": 0.05,
+    "padOut": 0.07,
+    "speed": 1.1,
+    "minIsland": 0.12
+  },
+  "camera": {
+    "originY": 0.36,
+    "maxShot": 1.8,
+    "zooms": [
+      1.0,
+      1.16,
+      1.06,
+      1.26,
+      1.1,
+      1.2
+    ],
+    "drift": 0.035,
+    "punch": 0.1,
+    "beatZoom": 1.0,
+    "beatShiftY": 0,
+    "eyesY": 0.42
+  },
+  "captions": {
+    "enabled": true,
+    "y": 0.665,
+    "maxWords": 2,
+    "maxGraphemes": 16,
+    "fontSize": 92,
+    "weight": 700,
+    "emphScale": 1.22,
+    "box": "pill",
+    "maxWidth": 800,
+    "style": "minimal"
+  },
+  "graphics": {
+    "zone": "top",
+    "top": 0.156,
+    "height": 0.205,
+    "width": 0.74
+  },
+  "hook": {
+    "style": "slam",
+    "y": 0.22,
+    "fontSize": 88,
+    "scrim": true
+  },
+  "progressBar": true,
+  "cta": true,
+  "thumbnail": false
+}

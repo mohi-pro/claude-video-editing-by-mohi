@@ -1,0 +1,13 @@
+{
+  "_doc": "LOCKED format preset — Long-form: YouTube (16:9). Frosted-glass side panels + camera zoom, no burned-in captions (upload SRT as YouTube CC). Inherits signature-style.json.",
+  "name": "long-youtube",
+  "canvas": { "width": 1920, "height": 1080, "fps": 30 },
+  "roughCut": { "maxGap": 0.18, "padIn": 0.06, "padOut": 0.1, "speed": 1.05, "minIsland": 0.12 },
+  "camera": { "originY": 0.38, "maxShot": 3.2, "zooms": [1.0, 1.12, 1.05, 1.18], "drift": 0.025, "punch": 0.06, "beatZoom": 1.0, "beatShiftX": -0.2 },
+  "captions": { "enabled": false, "y": 0.86, "maxWords": 5, "maxGraphemes": 34, "fontSize": 60, "weight": 600, "emphScale": 1.12, "box": "pill", "maxWidth": 1500 },
+  "graphics": { "zone": "side", "top": 0.12, "height": 0.76, "width": 0.42, "glass": true },
+  "hook": { "style": "glass", "y": 0.72, "fontSize": 84, "scrim": false },
+  "progressBar": false,
+  "cta": false,
+  "thumbnail": true
+}

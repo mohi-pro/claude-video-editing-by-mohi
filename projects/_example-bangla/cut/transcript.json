@@ -1,0 +1,366 @@
+[
+  {
+    "text": "আপনি",
+    "start": 0.039,
+    "end": 0.216,
+    "src": 0,
+    "fixed": true
+  },
+  {
+    "text": "কি",
+    "start": 0.216,
+    "end": 0.313,
+    "src": 1,
+    "fixed": true
+  },
+  {
+    "text": "জানেন,",
+    "start": 0.313,
+    "end": 0.725,
+    "src": 2,
+    "fixed": true
+  },
+  {
+    "text": "প্রতি",
+    "start": 0.725,
+    "end": 0.965,
+    "src": 3,
+    "fixed": true
+  },
+  {
+    "text": "দশজনের",
+    "start": 0.965,
+    "end": 1.364,
+    "src": 4,
+    "fixed": true
+  },
+  {
+    "text": "মধ্যে",
+    "start": 1.364,
+    "end": 1.637,
+    "src": 5,
+    "fixed": true
+  },
+  {
+    "text": "সাতজন",
+    "start": 1.637,
+    "end": 1.916,
+    "src": 6,
+    "fixed": true
+  },
+  {
+    "text": "মানুষ",
+    "start": 1.916,
+    "end": 2.142,
+    "src": 7,
+    "fixed": true
+  },
+  {
+    "text": "টাকা",
+    "start": 2.142,
+    "end": 2.393,
+    "src": 8,
+    "fixed": true
+  },
+  {
+    "text": "জমাতে",
+    "start": 2.393,
+    "end": 2.711,
+    "src": 9,
+    "fixed": true
+  },
+  {
+    "text": "পারে",
+    "start": 2.711,
+    "end": 2.864,
+    "src": 10,
+    "fixed": true
+  },
+  {
+    "text": "না?",
+    "start": 2.864,
+    "end": 3.096,
+    "src": 11,
+    "fixed": true
+  },
+  {
+    "text": "আসলে",
+    "start": 3.19,
+    "end": 3.418,
+    "src": 14,
+    "fixed": true
+  },
+  {
+    "text": "সমস্যাটা",
+    "start": 3.418,
+    "end": 3.855,
+    "src": 15,
+    "fixed": true
+  },
+  {
+    "text": "আয়ের",
+    "start": 3.855,
+    "end": 4.145,
+    "src": 16,
+    "fixed": true
+  },
+  {
+    "text": "না।",
+    "start": 4.145,
+    "end": 4.31,
+    "src": 17,
+    "fixed": true
+  },
+  {
+    "text": "সমস্যাটা",
+    "start": 4.411,
+    "end": 4.818,
+    "src": 20,
+    "fixed": true
+  },
+  {
+    "text": "হলো",
+    "start": 4.818,
+    "end": 5.03,
+    "src": 21,
+    "fixed": true
+  },
+  {
+    "text": "খরচের",
+    "start": 5.03,
+    "end": 5.393,
+    "src": 22,
+    "fixed": true
+  },
+  {
+    "text": "হিসাব",
+    "start": 5.393,
+    "end": 5.629,
+    "src": 23,
+    "fixed": true
+  },
+  {
+    "text": "না",
+    "start": 5.629,
+    "end": 5.769,
+    "src": 24,
+    "fixed": true
+  },
+  {
+    "text": "রাখা।",
+    "start": 5.769,
+    "end": 6.142,
+    "src": 25,
+    "fixed": true
+  },
+  {
+    "text": "প্রতি",
+    "start": 6.245,
+    "end": 6.461,
+    "src": 27,
+    "fixed": true
+  },
+  {
+    "text": "মাসে",
+    "start": 6.461,
+    "end": 6.677,
+    "src": 28,
+    "fixed": true
+  },
+  {
+    "text": "বেতনের",
+    "start": 6.677,
+    "end": 7.065,
+    "src": 29,
+    "fixed": true
+  },
+  {
+    "text": "২০%",
+    "start": 7.065,
+    "end": 7.484,
+    "src": 30,
+    "fixed": true
+  },
+  {
+    "text": "আলাদা",
+    "start": 7.484,
+    "end": 7.845,
+    "src": 31,
+    "fixed": true
+  },
+  {
+    "text": "করে",
+    "start": 7.845,
+    "end": 8.015,
+    "src": 32,
+    "fixed": true
+  },
+  {
+    "text": "রাখুন।",
+    "start": 8.015,
+    "end": 8.433,
+    "src": 32,
+    "fixed": true
+  },
+  {
+    "text": "এক",
+    "start": 8.528,
+    "end": 8.586,
+    "src": 33,
+    "fixed": true
+  },
+  {
+    "text": "বছরে",
+    "start": 8.586,
+    "end": 8.915,
+    "src": 34,
+    "fixed": true
+  },
+  {
+    "text": "আপনার",
+    "start": 8.915,
+    "end": 9.186,
+    "src": 35,
+    "fixed": true
+  },
+  {
+    "text": "হাতে",
+    "start": 9.186,
+    "end": 9.36,
+    "src": 36,
+    "fixed": true
+  },
+  {
+    "text": "থাকবে",
+    "start": 9.36,
+    "end": 9.705,
+    "src": 37,
+    "fixed": true
+  },
+  {
+    "text": "প্রায়",
+    "start": 9.705,
+    "end": 9.996,
+    "src": 38,
+    "fixed": true
+  },
+  {
+    "text": "৫০",
+    "start": 9.996,
+    "end": 10.22,
+    "src": 39,
+    "fixed": true
+  },
+  {
+    "text": "হাজার",
+    "start": 10.22,
+    "end": 10.463,
+    "src": 40,
+    "fixed": true
+  },
+  {
+    "text": "টাকা।",
+    "start": 10.463,
+    "end": 10.865,
+    "src": 41,
+    "fixed": true
+  },
+  {
+    "text": "ঢাকা",
+    "start": 10.971,
+    "end": 11.205,
+    "src": 42,
+    "fixed": true
+  },
+  {
+    "text": "হোক",
+    "start": 11.205,
+    "end": 11.35,
+    "src": 43,
+    "fixed": true
+  },
+  {
+    "text": "বা",
+    "start": 11.35,
+    "end": 11.486,
+    "src": 44,
+    "fixed": true
+  },
+  {
+    "text": "চট্টগ্রাম,",
+    "start": 11.486,
+    "end": 11.984,
+    "src": 45,
+    "fixed": true
+  },
+  {
+    "text": "এই",
+    "start": 11.984,
+    "end": 12.2,
+    "src": 46,
+    "fixed": true
+  },
+  {
+    "text": "নিয়ম",
+    "start": 12.2,
+    "end": 12.367,
+    "src": 47,
+    "fixed": true
+  },
+  {
+    "text": "সবার",
+    "start": 12.367,
+    "end": 12.618,
+    "src": 48,
+    "fixed": true
+  },
+  {
+    "text": "জন্য",
+    "start": 12.618,
+    "end": 12.8,
+    "src": 49,
+    "fixed": true
+  },
+  {
+    "text": "কাজ",
+    "start": 12.8,
+    "end": 13.002,
+    "src": 50,
+    "fixed": true
+  },
+  {
+    "text": "করে।",
+    "start": 13.002,
+    "end": 13.393,
+    "src": 51,
+    "fixed": true
+  },
+  {
+    "text": "আজ",
+    "start": 13.492,
+    "end": 13.674,
+    "src": 53,
+    "fixed": true
+  },
+  {
+    "text": "থেকেই",
+    "start": 13.674,
+    "end": 13.921,
+    "src": 54,
+    "fixed": true
+  },
+  {
+    "text": "শুরু",
+    "start": 13.921,
+    "end": 14.121,
+    "src": 54,
+    "fixed": true
+  },
+  {
+    "text": "করুন।",
+    "start": 14.121,
+    "end": 14.453,
+    "src": 54,
+    "fixed": true
+  }
+]

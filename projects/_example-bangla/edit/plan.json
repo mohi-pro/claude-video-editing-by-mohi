@@ -1,0 +1,13 @@
+{
+  "hook": { "text": "৭০% মানুষ টাকা জমাতে পারে না", "highlight": ["৭০%"], "emoji": "😳" },
+  "emphasis": ["হিসাব", "থাকবে"],
+  "beats": [
+    { "type": "compare", "startWord": 12, "endWord": 21, "title": "আসল সমস্যা কোথায়?",
+      "left": { "emoji": "💸", "title": "আয় কম?", "text": "আসল কারণ না" },
+      "right": { "emoji": "📒", "title": "খরচের হিসাব", "text": "এটাই চাবিকাঠি" } },
+    { "type": "stat", "startWord": 22, "endWord": 28, "value": 20, "suffix": "%", "label": "বেতনের অংশ আলাদা রাখুন" },
+    { "type": "line", "startWord": 29, "endWord": 37, "title": "আপনার সঞ্চয়", "points": [0, 12, 25, 38, 50], "labels": ["শুরু", "৩ মাস", "৬ মাস", "৯ মাস", "১ বছর"], "endLabel": "৳৫০,০০০" },
+    { "type": "map", "startWord": 38, "endWord": 47, "country": "Bangladesh", "label": "সবার জন্য", "pins": [ { "lon": 90.41, "lat": 23.81, "label": "ঢাকা" }, { "lon": 91.83, "lat": 22.36, "label": "চট্টগ্রাম" } ], "route": true },
+    { "type": "text", "startWord": 48, "endWord": 51, "text": "আজ থেকেই *শুরু*", "emoji": "🚀" }
+  ]
+}

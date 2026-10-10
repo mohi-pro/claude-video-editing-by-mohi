@@ -1,0 +1,60 @@
+{
+  "_doc": "LOCKED format preset — Short: TikTok / raw (9:16). Rule-of-thirds layout: hook/titles/cards in the top band (15.6–36%), eyes on the 42% line, captions centred at 66.5%, full-screen scenes for big infographics.",
+  "name": "short-tiktok",
+  "canvas": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "roughCut": {
+    "maxGap": 0.1,
+    "padIn": 0.04,
+    "padOut": 0.06,
+    "speed": 1.12,
+    "minIsland": 0.12
+  },
+  "camera": {
+    "originY": 0.34,
+    "maxShot": 1.5,
+    "zooms": [
+      1.0,
+      1.2,
+      1.08,
+      1.3,
+      1.12,
+      1.24
+    ],
+    "drift": 0.04,
+    "punch": 0.12,
+    "beatZoom": 1.05,
+    "beatShiftY": 0,
+    "eyesY": 0.42
+  },
+  "captions": {
+    "enabled": true,
+    "y": 0.665,
+    "maxWords": 2,
+    "maxGraphemes": 16,
+    "fontSize": 92,
+    "weight": 700,
+    "emphScale": 1.25,
+    "box": "pill",
+    "maxWidth": 800,
+    "style": "minimal"
+  },
+  "graphics": {
+    "zone": "pop",
+    "top": 0.156,
+    "height": 0.205,
+    "width": 0.74
+  },
+  "hook": {
+    "style": "slam",
+    "y": 0.22,
+    "fontSize": 88,
+    "scrim": true
+  },
+  "progressBar": true,
+  "cta": true,
+  "thumbnail": false
+}

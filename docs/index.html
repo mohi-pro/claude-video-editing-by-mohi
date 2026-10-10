@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claude Video Editing by Mohi: হাতে-কলমে setup</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0B0B0D; --panel: #16161B; --panel-2: #1E1E25; --ink: #F6EEE3; --muted: #A8A096; --line: rgba(246,238,227,.13);
+  --accent: #FF7A1A; --accent-ink: #1A0E04; --ok: #3DDC97; --term: #0D0D11; --term-ink: #EDE6DB;
+  --f-ui: "Hind Siliguri", system-ui, -apple-system, "Segoe UI", sans-serif; --f-mono: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+  color-scheme: dark;
+}
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) { --bg: #FAF6EF; --panel: #FFFFFF; --panel-2: #F2ECE1; --ink: #17140F; --muted: #62594D; --line: rgba(23,20,15,.15); --accent: #D9500A; --accent-ink: #FFF6EC; --ok: #0E8A55; color-scheme: light; }
+}
+:root[data-theme="light"] { --bg: #FAF6EF; --panel: #FFFFFF; --panel-2: #F2ECE1; --ink: #17140F; --muted: #62594D; --line: rgba(23,20,15,.15); --accent: #D9500A; --accent-ink: #FFF6EC; --ok: #0E8A55; color-scheme: light; }
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--bg); color: var(--ink); font: 400 18px/1.7 var(--f-ui); -webkit-font-smoothing: antialiased; padding: 0 20px 80px; }
+.wrap { max-width: 860px; margin: 0 auto; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+
+.hero { padding: 64px 0 24px; }
+.eyebrow { font: 600 12px/1 var(--f-mono); letter-spacing: .14em; color: var(--accent); }
+h1 { font-size: clamp(34px, 6.6vw, 60px); line-height: 1.2; font-weight: 700; margin: 14px 0 12px; text-wrap: balance; }
+h1 em { font-style: normal; color: var(--accent); }
+.lead { color: var(--muted); font-size: 20px; max-width: 52ch; }
+
+section { padding: 54px 0 4px; border-top: 1px solid var(--line); margin-top: 46px; }
+section:first-of-type { border-top: 0; }
+h2 { font-size: clamp(26px, 4.4vw, 34px); line-height: 1.3; font-weight: 700; display: flex; align-items: center; gap: 14px; }
+h2 b { flex: none; width: 40px; height: 40px; border-radius: 50%; background: var(--accent); color: var(--accent-ink); font: 700 19px/1 var(--f-ui); display: flex; align-items: center; justify-content: center; }
+.sub { color: var(--muted); margin: 6px 0 22px; max-width: 60ch; }
+p { margin: 12px 0; }
+.hl { background: color-mix(in srgb, var(--accent) 26%, transparent); padding: 0 6px; border-radius: 4px; }
+a { color: var(--accent); }
+
+/* cards */
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 14px; margin: 20px 0; }
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 18px; }
+.card h3 { font-size: 19px; line-height: 1.4; margin-bottom: 4px; }
+.card p { color: var(--muted); font-size: 16px; margin: 0; line-height: 1.6; }
+
+/* steps */
+.steps { list-style: none; margin: 18px 0; display: grid; gap: 12px; counter-reset: s; }
+.steps li { counter-increment: s; display: grid; grid-template-columns: 40px minmax(0,1fr); gap: 14px; align-items: start; }
+.steps li::before { content: counter(s); width: 38px; height: 38px; border-radius: 50%; border: 1.5px solid var(--accent); color: var(--accent); display: flex; align-items: center; justify-content: center; font-weight: 700; }
+
+/* flow diagrams */
+.flow { display: flex; flex-wrap: wrap; gap: 10px 0; margin: 18px 0; align-items: stretch; }
+.node { position: relative; background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 9px 12px; margin-right: 26px; }
+.node:last-child { margin-right: 0; }
+.node:not(:last-child)::after { content: "→"; position: absolute; right: -22px; top: 50%; transform: translateY(-50%); color: var(--accent); font-weight: 700; font-size: 20px; }
+.node b { display: block; font-size: 17px; line-height: 1.4; }
+.node small { color: var(--muted); font-size: 14px; line-height: 1.4; display: block; }
+.node.hot { border-color: var(--accent); }
+.flow.tight .node { padding: 8px 10px; margin-right: 22px; }
+.flow.tight .node::after { right: -19px; font-size: 18px; }
+.flow.tight .node b { font-size: 16px; }
+.loop { color: var(--muted); font-size: 15px; margin-top: -4px; }
+.label { font: 600 12px/1 var(--f-mono); letter-spacing: .1em; color: var(--muted); margin: 24px 0 6px; }
+
+/* install cards */
+.tool { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 20px; margin: 16px 0; transition: border-color .2s, opacity .2s; }
+.tool.done { border-color: var(--ok); }
+.tool-head { display: grid; grid-template-columns: 44px minmax(0,1fr); gap: 14px; align-items: center; }
+.num { width: 42px; height: 42px; border-radius: 50%; border: 1.5px solid var(--accent); background: transparent; color: var(--accent); font: 700 17px/1 var(--f-ui); cursor: pointer; }
+.tool.done .num { background: var(--ok); border-color: var(--ok); color: #06150D; }
+.tool h3 { font-size: 21px; line-height: 1.35; }
+.why { color: var(--muted); font-size: 16.5px; line-height: 1.5; }
+
+.cmd { background: var(--term); border: 1px solid rgba(237,230,219,.12); border-radius: 12px; margin: 14px 0 2px; overflow: hidden; }
+.cmd-bar { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 8px 10px 8px 14px; border-bottom: 1px solid rgba(237,230,219,.12); }
+.cmd-bar span { font: 600 11.5px/1.3 var(--f-mono); letter-spacing: .06em; color: #8C857B; }
+.copy { font: 600 13px/1 var(--f-ui); background: var(--accent); color: var(--accent-ink); border: 0; border-radius: 7px; padding: 8px 14px; cursor: pointer; min-width: 74px; }
+.copy:hover { filter: brightness(1.08); }
+.cmd pre { padding: 13px 15px; color: var(--term-ink); font: 400 13.5px/1.7 var(--f-mono); white-space: pre-wrap; overflow-wrap: anywhere; }
+.fill { color: #FFB347; font-weight: 600; }
+
+.note { border: 1px solid var(--line); border-left: 3px solid var(--accent); border-radius: 10px; padding: 12px 16px; margin: 20px 0; background: var(--panel); color: var(--muted); font-size: 16.5px; }
+.note b { color: var(--ink); }
+.kit { background: linear-gradient(135deg, color-mix(in srgb, var(--accent) 20%, var(--panel)), var(--panel)); border: 1px solid color-mix(in srgb, var(--accent) 45%, var(--line)); border-radius: 18px; padding: 26px 22px; margin: 22px 0; }
+.kit h3 { font-size: 24px; margin-bottom: 6px; }
+.slot { display: inline-block; font-weight: 700; padding: 3px 12px; border: 1.5px dashed var(--accent); border-radius: 8px; color: var(--accent); }
+footer { text-align: center; color: var(--muted); font-size: 14px; margin-top: 54px; }
+
+@media (max-width: 560px) {
+  body { font-size: 17px; padding: 0 16px 60px; }
+  .hero { padding-top: 40px; }
+  .node { margin-right: 0; width: 100%; }
+  .node::after { content: "↓" !important; right: auto !important; left: 50%; top: auto !important; bottom: -24px; transform: translateX(-50%) !important; }
+  .flow { gap: 26px 0; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <p class="eyebrow">CLAUDE VIDEO EDITING BY MOHI</p>
+  <h1>নিজের <em>AI</em> ভিডিও এডিটর বানান</h1>
+  <p class="lead">কাঁচা ভিডিও দিন, AI কাটবে, ক্যাপশন দেবে, animation বসাবে। এই পাতায় প্রতিটা টুল একটা একটা করে বসানো শেখানো হয়েছে: প্রতিটার জন্য একটাই লেখা, Claude নিজে চালিয়ে ঠিক করে নেয়। তাড়া থাকলে সরাসরি শর্টকাট নিন (বিভাগ ৪)।</p>
+</header>
+
+<!-- 1 -->
+<section>
+  <h2><b>১</b> কী কী লাগবে</h2>
+  <div class="cards">
+    <div class="card"><h3>একটা PC</h3><p>Mac বা Windows, দুটোই চলবে</p></div>
+    <div class="card"><h3>Claude Code</h3><p>বিনা মূল্যে নয়, paid plan লাগবে</p></div>
+    <div class="card"><h3>ফাঁকা জায়গা</h3><p>প্রায় ২০ GB</p></div>
+    <div class="card"><h3>Internet</h3><p>টুল আর AI model নামাতে</p></div>
+  </div>
+  <p class="note"><b>Windows হলে:</b> Claude আপনার সিস্টেম দেখে ঠিক টুল বসাবে (winget দিয়ে), আর বাংলা শোনার অংশ নিজে থেকে <code>faster-whisper</code>-এ চলে যায়। তবে পুরোটা এখনও আসল Windows PC-তে পরীক্ষা হয়নি, তাই "experimental"। আটকে গেলে Claude কারণ খুঁজে ঠিক করে এগোবে। সবচেয়ে পরীক্ষিত পথ হলো Apple Silicon Mac।</p>
+</section>
+
+<!-- 2 -->
+<section>
+  <h2><b>২</b> Claude নামান আর sign up</h2>
+  <ol class="steps">
+    <li><div><b>Download:</b> <a href="https://claude.com/download" target="_blank" rel="noopener">claude.com/download</a> থেকে আপনার PC-র জন্য Claude app নামান।</div></li>
+    <li><div><b>Install</b> করে app খুলুন।</div></li>
+    <li><div><b>Sign up</b> করুন (Google বা ইমেইল দিয়ে), তারপর একটা <span class="hl">paid plan</span> নিন।</div></li>
+    <li><div>app-এ <b>Claude Code</b> বেছে নিন, এটাই আমাদের এডিটর।</div></li>
+  </ol>
+</section>
+
+<!-- 3 -->
+<section>
+  <h2><b>৩</b> পুরো প্রক্রিয়া এক নজরে</h2>
+  <p class="label">আমরা কী করব</p>
+  <div class="flow">
+    <div class="node"><b>Folder</b><small>স্টুডিওর ঘর</small></div>
+    <div class="node"><b>টুল install</b><small>একটা একটা করে</small></div>
+    <div class="node hot"><b>ভিডিও দিন</b><small>"এডিট করো" বলুন</small></div>
+    <div class="node"><b>Localhost-এ দেখুন</b><small>নিজের editor-এ</small></div>
+    <div class="node"><b>Comment করুন</b><small>বদলাতে বলুন</small></div>
+  </div>
+  <p class="loop">↺ comment করলে AI নতুন version বানায়, ভালো না লাগা পর্যন্ত।</p>
+
+  <p class="label">AI ভেতরে কীভাবে এডিট করে</p>
+  <div class="flow">
+    <div class="node"><b>ভিডিও</b><small>কাঁচা ক্লিপ</small></div>
+    <div class="node"><b>শোনে</b><small>Whisper, Parakeet</small></div>
+    <div class="node"><b>কাটে</b><small>FFmpeg</small></div>
+    <div class="node"><b>ভাবে</b><small>Claude + skill</small></div>
+    <div class="node"><b>বানায়</b><small>HyperFrames</small></div>
+    <div class="node hot"><b>Reel</b><small>তৈরি ভিডিও</small></div>
+  </div>
+</section>
+
+<!-- 4 -->
+<section>
+  <h2><b>৪</b> এই folder-টা নিন</h2>
+  <p class="sub">স্টুডিওর সবকিছু (engine, skill, style, font) একটা GitHub repo-তে সাজানো। এটাই আপনার স্টুডিওর folder।</p>
+  <ol class="steps">
+    <li><div>GitHub-এ repo খুলুন → <b>Code → Download ZIP</b>, তারপর unzip করুন। অথবা Terminal-এ: <code>git clone https://github.com/<span class="slot">YOUR-USERNAME</span>/claude-video-editing-by-mohi.git</code></div></li>
+    <li><div>Claude Code-এ নতুন session খুলুন, <b>এই folder-টা বেছে নিন</b> (Local)।</div></li>
+    <li><div>Permissions-এ <b>Auto</b> দিন, যাতে Claude বারবার অনুমতি না চায়।</div></li>
+  </ol>
+  <div class="cmd"><div class="cmd-bar"><span>শর্টকাট: CLAUDE CODE-এ PASTE করুন</span><button class="copy" type="button">কপি</button></div><pre>Set up this studio.</pre></div>
+  <p class="note"><b>এটাই শর্টকাট।</b> এই এক লাইনে Claude নিচের ৫ নম্বর বিভাগের সবকিছু নিজে করে দেয়, তারপর একটা পুরো পরীক্ষা চালায়। হাতে হাতে বুঝে করতে চাইলে নিচে চলুন, একটা একটা করে।</p>
+</section>
+
+<!-- 5 -->
+<section>
+  <h2><b>৫</b> টুল install: একটা একটা করে</h2>
+  <p class="sub">শর্টকাট না নিলে নিচের <b>ক্রম মেনে</b>, ওপর থেকে নিচে। প্রতিটার লেখা copy করে <span class="hl">Claude Code-এর chat-এ paste</span> করুন। Claude চালাবে, ঠিক হলো কিনা নিজে দেখবে, ভুল হলে আবার চেষ্টা করবে বা ভালো বিকল্প খুঁজবে, আর শেষে ✅ দিয়ে জানাবে। সংখ্যায় ক্লিক করলে সবুজ টিক পড়ে।</p>
+
+  <div class="flow tight">
+    <div class="node"><b>১ Package</b></div><div class="node"><b>২ FFmpeg</b></div><div class="node"><b>৩ Node.js</b></div><div class="node"><b>৪ Python</b></div><div class="node"><b>৫ HyperFrames</b></div><div class="node"><b>৬ কথা শোনা</b></div><div class="node hot"><b>৭ Engine</b></div>
+  </div>
+
+  <div class="tool" id="t1">
+    <div class="tool-head"><button class="num" type="button" aria-label="হয়েছে চিহ্নিত করুন">১</button><div><h3>Homebrew (Windows-এ winget)</h3><p class="why">কেন: পরের সব টুল এক লাইনে বসানোর "টুল-দোকান"। তাই সবার আগে।</p></div></div>
+    <div class="cmd"><div class="cmd-bar"><span>MAC · TERMINAL-এ চালান (password লাগে)</span><button class="copy" type="button">কপি</button></div><pre>/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" &amp;&amp; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' &gt;&gt; ~/.zprofile &amp;&amp; eval "$(/opt/homebrew/bin/brew shellenv)" &amp;&amp; brew --version &amp;&amp; echo "✅ Homebrew installed"</pre></div>
+    <p class="why" style="margin-top:10px">Windows-এ কিছু করতে হবে না। winget Windows 10/11-এ আগে থেকেই থাকে। এটাই একমাত্র ধাপ যেখানে password লাগে, তাই Terminal-এ নিজে চালান (Cmd+Space → Terminal)।</p>
+  </div>
+
+  <div class="tool" id="t2">
+    <div class="tool-head"><button class="num" type="button" aria-label="হয়েছে চিহ্নিত করুন">২</button><div><h3>FFmpeg</h3><p class="why">কেন: ভিডিও-অডিও কাটা, জোড়া আর শেষে render করে। এটা ছাড়া এডিট শুরুই হয় না।</p></div></div>
+    <div class="cmd"><div class="cmd-bar"><span>CLAUDE CODE-এ PASTE করুন</span><button class="copy" type="button">কপি</button></div><pre>Install FFmpeg (Homebrew on Mac, winget on Windows). Make sure both ffmpeg and ffprobe run. If anything fails, retry or choose a better alternative until it works. When done, reply only: ✅ FFmpeg installed</pre></div>
+  </div>
+
+  <div class="tool" id="t3">
+    <div class="tool-head"><button class="num" type="button" aria-label="হয়েছে চিহ্নিত করুন">৩</button><div><h3>Node.js</h3><p class="why">কেন: HyperFrames আর আমাদের engine-এর স্ক্রিপ্ট Node দিয়ে চলে।</p></div></div>
+    <div class="cmd"><div class="cmd-bar"><span>CLAUDE CODE-এ PASTE করুন</span><button class="copy" type="button">কপি</button></div><pre>Install Node.js version 22 or newer (Homebrew on Mac, winget on Windows). Make sure node and npx run. If anything fails, retry or choose a better alternative until it works. When done, reply only: ✅ Node.js installed</pre></div>
+  </div>
+
+  <div class="tool" id="t4">
+    <div class="tool-head"><button class="num" type="button" aria-label="হয়েছে চিহ্নিত করুন">৪</button><div><h3>Python</h3><p class="why">কেন: বাংলা শোনা, মুখ ট্র্যাক করা, আপনাকে কেটে আলাদা করা, এই কাজগুলো Python-এ।</p></div></div>
+    <div class="cmd"><div class="cmd-bar"><span>CLAUDE CODE-এ PASTE করুন</span><button class="copy" type="button">কপি</button></div><pre>Install uv (Homebrew on Mac, winget on Windows), then use it to create a Python 3.12 virtual environment at engine/.venv in this folder. Make sure it runs. If anything fails, retry or choose a better alternative until it works. When done, reply only: ✅ Python installed</pre></div>
+  </div>
+
+  <div class="tool" id="t5">
+    <div class="tool-head"><button class="num" type="button" aria-label="হয়েছে চিহ্নিত করুন">৫</button><div><h3>HyperFrames</h3><p class="why">কেন: animation আঁকে, ভিডিও বানায়, আর আপনার localhost editor এটাই।</p></div></div>
+    <div class="cmd"><div class="cmd-bar"><span>CLAUDE CODE-এ PASTE করুন</span><button class="copy" type="button">কপি</button></div><pre>Set up HyperFrames: run npx -y hyperframes@latest skills (choose Claude Code), then run npx hyperframes doctor and fix anything that fails and matters (ignore Docker, Kokoro and MusicGen). If anything fails, retry or choose a better alternative until it works. When done, reply only: ✅ HyperFrames installed</pre></div>
+  </div>
+
+  <div class="tool" id="t6">
+    <div class="tool-head"><button class="num" type="button" aria-label="হয়েছে চিহ্নিত করুন">৬</button><div><h3>কথা শোনা: Whisper + Parakeet</h3><p class="why">কেন: ভিডিওর কথা শুনে লেখা আর প্রতিটা শব্দের সময় বের করে। Whisper বাংলার জন্য, Parakeet English-এর জন্য। দুটো একসাথে।</p></div></div>
+    <div class="cmd"><div class="cmd-bar"><span>CLAUDE CODE-এ PASTE করুন</span><button class="copy" type="button">কপি</button></div><pre>Set up speech-to-text for Bangla and English. Bangla: install mlx-whisper together with opencv-python-headless, numpy and edge-tts into engine/.venv and download the model mlx-community/whisper-large-v3-mlx (on Windows use a working Whisper alternative such as faster-whisper). English: run npx hyperframes models install parakeet. Test both with a tiny sample. If anything fails, retry or choose a better alternative until it works. When done, reply only: ✅ Speech-to-text installed (Bangla + English)</pre></div>
+  </div>
+
+  <div class="tool" id="t7">
+    <div class="tool-head"><button class="num" type="button" aria-label="হয়েছে চিহ্নিত করুন">৭</button><div><h3>Engine আর Skills</h3><p class="why">কেন: টুলগুলো ঠিক কোন ক্রমে, কোন style-এ চলবে তা বলে দেয়। এটাই আসল এডিটর। এটা এই folder-এই আছে (GitHub repo), শুধু ছোট কিছু জিনিস নামাতে হয়।</p></div></div>
+    <div class="cmd"><div class="cmd-bar"><span>CLAUDE CODE-এ PASTE করুন</span><button class="copy" type="button">কপি</button></div><pre>In this folder, run python3 scripts/setup_assets.py. It downloads the GSAP animation library, the noise remover for my computer, and generates the 24 sound effects. Then confirm .claude/skills contains the 11 skills. If anything fails, retry or choose a better alternative until it works. When done, reply only: ✅ Engine and skills ready, then remind me to open a new chat.</pre></div>
+    <p class="why" style="margin-top:10px">Skill শুধু নতুন chat শুরুর সময় load হয়, তাই এরপর <b>নতুন chat খুলুন</b>।</p>
+  </div>
+
+  <div class="tool" id="t8">
+    <div class="tool-head"><button class="num" type="button" aria-label="হয়েছে চিহ্নিত করুন">✓</button><div><h3>সবকিছু একসাথে যাচাই</h3><p class="why">শেষে একটাই লেখা: সব টুল ঠিক আছে কিনা এক নজরে ✅ বা ❌ দিয়ে জানায়, আর ❌ থাকলে নিজেই ঠিক করে।</p></div></div>
+    <div class="cmd"><div class="cmd-bar"><span>নতুন chat-এ PASTE করুন</span><button class="copy" type="button">কপি</button></div><pre>Run python3 scripts/doctor.py and show me the list. Fix every ❌ yourself (retry or choose a better alternative), then run it again until everything is ✅.</pre></div>
+  </div>
+
+  <p class="note"><b>auto-editor, yt-dlp</b> লাগবে না। ওগুলো শুধু লম্বা YouTube ভিডিওর আলাদা kit-এ লাগে, reels-এ নয়।</p>
+</section>
+
+<!-- 6 -->
+<section>
+  <h2><b>৬</b> ভিডিও দিন, দেখুন, ঠিক করুন</h2>
+  <p class="sub">নতুন chat-এ আপনার ভিডিওর path দিয়ে এটা পাঠান। বাংলা বা ইংরেজি, যেটায় সুবিধা।</p>
+  <div class="cmd"><div class="cmd-bar"><span>CLAUDE CODE-এ PASTE করুন</span><button class="copy" type="button">কপি</button></div><pre>এই ভিডিওটা এডিট করো: <span class="fill">/path/to/your-clip.MOV</span>
+একটা মিনিমাল, প্রফেশনাল বাংলা reel বানাও। রং স্বাভাবিক রাখো, শুধু হালকা grade।
+পরিষ্কার বাংলা ক্যাপশন দাও। আমি যখন "AI দিয়ে এডিট" বলব, একটা AI chat বা editing timeline দেখাও।
+"sound effect" বললে একটা sound icon দেখাও আর আওয়াজ বাজাও। প্রতিটা "animation"-এ আলাদা animation দেখাও।
+আমার মুখের ওপর কোনো লেখা বসাবে না। টাইটেল আর লিস্ট আমার মাথার পেছনের glossy card-এ যাবে।
+আগে আমাকে লেখাটা দেখাও, তারপর plan, তারপর render করো, আর শেষে localhost editor-এর link দাও।</pre></div>
+  <ol class="steps">
+    <li><div><b>লেখা মেলানো:</b> Claude কী শুনেছে দেখায়, ❓ চিহ্নিত শব্দ আপনি ঠিক করে দেন।</div></li>
+    <li><div><b>Plan:</b> কোন কথায় কোন animation বসবে, আপনি দেখে নেন।</div></li>
+    <li><div><b>Localhost editor:</b> Claude একটা link দেয় (যেমন <code>http://localhost:3003</code>)। খুলে লেখায় ক্লিক করে বদলান, বা Claude-কে সময় ধরে বলুন: <span class="hl">"৬ সেকেন্ডে card-টা ছোট করো"</span>।</div></li>
+  </ol>
+  <p class="note"><b>মনে রাখুন:</b> Studio-তে নিজে বদলালে Claude-কে জানান, নাহলে পরের বার বানানোর সময় আপনার বদল মুছে যেতে পারে। আর কোনো ভুল ধরলে বলুন <b>"Save this to the skill"</b>, পরের ভিডিওতে ভুলটা আর হবে না।</p>
+</section>
+
+<!-- 7 -->
+<section>
+  <h2><b>৭</b> সারকথা</h2>
+  <div class="kit">
+    <h3>মনে রাখার মতো তিনটা কথা</h3>
+    <p><b>১.</b> এই repo-ই আপনার স্টুডিও। Download করুন, Claude Code-এ folder বেছে নিন, বলুন <b>"Set up this studio"</b>। আর কিছু লাগে না।</p>
+    <p><b>২.</b> ভিডিও দিন: <b>"Edit this video: path"</b>। লেখা মেলান, plan দেখুন, localhost editor-এ ঠিক করুন।</p>
+    <p><b>৩.</b> ভুল ধরলে বলুন <b>"Save this to the skill"</b>। প্রতিবার আপনার এডিটর আপনার মতো হবে।</p>
+  </div>
+  <p class="note"><b>Music:</b> repo-তে কোনো music নেই (licence)। আপনার নিজের track <code>music/</code> folder-এ রাখুন, বা Claude-কে বলুন বিনা মূল্যের CC0 loop খুঁজে দিতে।</p>
+</section>
+
+<footer>Claude Video Editing by Mohi · Claude Code + HyperFrames + FFmpeg + Whisper</footer>
+</div>
+
+<script>
+// Copy: every .cmd copies its own <pre>
+document.querySelectorAll('.copy').forEach(function(b){
+  b.addEventListener('click', function(){
+    var el = b.closest('.cmd').querySelector('pre');
+    var done = function(m){ b.textContent = m; setTimeout(function(){ b.textContent = 'কপি'; }, 1500); };
+    var pick = function(){ var r = document.createRange(); r.selectNodeContents(el); var s = window.getSelection(); s.removeAllRanges(); s.addRange(r); done('নির্বাচিত'); };
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(el.innerText.trim()).then(function(){ done('কপি হয়েছে'); }, pick);
+      else pick();
+    } catch (e) { pick(); }
+  });
+});
+
+// Tick a tool done (remembered when the browser allows it)
+function lsGet(k){ try { return localStorage.getItem(k); } catch (e) { return null; } }
+function lsSet(k, v){ try { localStorage.setItem(k, v); } catch (e) {} }
+document.querySelectorAll('.tool').forEach(function(t){
+  var key = 'aivs_simple_' + t.id, btn = t.querySelector('.num'), label = btn.textContent;
+  var set = function(on){ t.classList.toggle('done', on); btn.textContent = on ? '✓' : label; };
+  set(lsGet(key) === '1');
+  btn.addEventListener('click', function(){ var on = !t.classList.contains('done'); set(on); lsSet(key, on ? '1' : '0'); });
+});
+</script>
+</body>
+</html>

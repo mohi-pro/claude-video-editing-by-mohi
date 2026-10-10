@@ -1,0 +1,14 @@
+{
+  "ok": true,
+  "out": "projects/_bn-test/edit/hf/index.html",
+  "duration": 14.5,
+  "shots": 15,
+  "avgShot": 0.967,
+  "captions": 16,
+  "beats": 5,
+  "graphicsCoverage": "79%",
+  "sfx": 15,
+  "maxDeadAir": 0.91,
+  "maxVisualGap": "1.43s @ 11.98",
+  "warnings": []
+}

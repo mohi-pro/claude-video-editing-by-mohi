@@ -1,0 +1,9 @@
+{
+  "_doc": "Upstream brand + spelling fixes, applied to every transcript BEFORE captions are built. Key = what Whisper writes (exact word, case-sensitive), value = what should be shown. Add to this whenever you fix the same mistake twice.",
+  "words": {
+    "ইনশাল্লাহ": "ইনশাআল্লাহ",
+    "ইউটিউব": "ইউটিউব",
+    "এআই": "AI"
+  },
+  "phrases": {}
+}
